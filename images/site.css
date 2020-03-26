@@ -1,5 +1,7 @@
-
-.girl{
+* {
+    font-family: 'Josefin Sans';
+}
+.girl {
     flex: 50%;
     padding: 0;
     margin: 0;
@@ -10,7 +12,7 @@
     padding: 0;
     margin: 0;
     position: relative;
-    z-index: -1;
+    /*z-index: -1;*/
 }
 
 .images {
@@ -21,24 +23,34 @@
     position: absolute;
     bottom: 30%;
     left: 17%;
-    font-family: 'Josefin Sans';
     text-align: left;
     font-size: 16px;
     color: hsla(0, 36%, 70%, 0.712);
     }
 input {
     text-align: left;
-    font-family: 'Josefin Sans';
     font-size: 16px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    border: 1px solid hsla(0, 36%, 70%, 0.411);
+    border-radius: 30px;
 
+}
+
+::placeholder {
+    color: hsla(0, 36%, 70%, 0.411);
 }
 
 #Email {
     height: 45px;
-    width: 420px;
+    width: 398px;
     color: hsla(0, 36%, 70%, 0.411);
-    border-radius: 30px;
     border: 1px solid hsla(0, 36%, 70%, 0.411);
+    border-radius: 30px;
+    padding: 0px 0px 0px 30px;
+    outline: none;
 }
 
 .comingSoon {
@@ -46,7 +58,6 @@ input {
     position: absolute;
     bottom: 55%;
     left: 17%;
-    font-family: 'Josefin Sans';
     letter-spacing: 0.3em;
 }
 
@@ -55,7 +66,6 @@ input {
     position: absolute;
     bottom: 68%;
     left: 17.5%;
-    font-family: 'Josefin Sans';
     letter-spacing: 0.3em;
     color: hsla(0, 36%, 70%, 0.712);
 }
@@ -63,12 +73,51 @@ input {
 .logo {
     position: absolute;
     bottom: 85%;
-    left: 15%;
+    left: 18%;
 }
 
 #arrow {
     position: absolute;
-    bottom: 20%;
+    bottom: 31.5%;
     left: 45%;
 }
 
+.button {
+    position: relative;
+    background: linear-gradient(0.25turn, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border-radius: 30px;
+    border: none;
+    height: 50px;
+    width: 90px;
+    cursor: pointer;
+    bottom: 29.5%;
+    left: 58%;
+    outline: none;
+    
+}
+
+.button:hover {
+    animation-name: background-color;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes background-color {
+    100% {
+        background: hsl(0, 66%, 88%); 
+    }
+}
+
+#message {
+    position: absolute;
+    color:  hsl(0, 74%, 74%);
+    bottom: 20%;
+    left: 14.5%;
+}
+
+#error {
+    position: absolute;
+    bottom: 7%;
+    left: 70%;
+
+}

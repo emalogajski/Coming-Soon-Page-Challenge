@@ -18,26 +18,59 @@
         <div class="mainText">Hello fellow shoppers! We're currently building our new<br><br>
             fashion store. Add your email below to stay up-to-date with <br><br>
             announcements and our launch deals.<br><br><br><br>
-            <input type="text" id="Email" value="     Email Address">
+            <input type="text" id="Email" placeholder="Email Address"value="">
+            <img src="icon-error.svg" id="error" style="display: none" alt="Error">
         </div>
+
+        <div class="logo" id="logo">
+            <img src="logo.svg" alt="logo">
+        </div>
+        <button class="button" type="button">
+            <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="20"><path 
+                fill="none" stroke="#FFF" stroke-width="2" d="M1 1l8.836 8.836L1 18.671"/></svg>
+        </button>
     </div>
     <div class="girl">
         <img src="hero-desktop.jpg" alt="Portrait of Girl">
     </div>
-    <div class="logo" id="logo">
-        <img src="logo.svg" alt="logo">
-    </div>
-    <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="20"><path 
-        fill="none" stroke="#FFF" stroke-width="2" d="M1 1l8.836 8.836L1 18.671"/></svg>
 </div>
+<div id="message"></div>
 
 
 </body>
 
 <script>
-    function input() {
-        var x = document.getElementById("Email").value;
+function validateEmail(email) {
+    let valid = tester.test(email);
+    if (valid) {
+        return true;
+    } else {
+        return false;
     }
+}
+
+    let btn = document.querySelector('button');
+    let input = document.querySelector('input');
+    let message = document.querySelector('#message');
+    let tester = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let borderEmail = document.getElementById("Email");
+
+    btn.addEventListener('click', () => {
+        let email = input.value;
+        let isValid = validateEmail(email);
+        let borderEmail = document.getElementById("Email");
+        let error = document.getElementById("error");
+
+        if (!isValid) {
+            message.innerHTML = "Please provide a valid email";
+            borderEmail.setAttribute('style', 'border: 1px solid red;');
+            error.setAttribute('style', 'display: block');
+        } else {
+            message.innerHTML = "";
+            
+        }
+    })
+    
 </script>
 
 </html>
@@ -46,4 +79,8 @@
 <!--<form>
     <input type="text" id="Email" name="fname">
     <input type="image" src="icon-arrow.svg" alt="Submit" align="right" width="48" height="48">
+    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 </form>-->
+
+<!--Why didn't it work when I tried to put evertyhing into one addEventListener instead of making a separate 
+validateEmail function?-->
