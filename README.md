@@ -1,3 +1,5 @@
+This coding challenge was obtained from www.frontendmentor.io and contains the guidance needed here to get you started. You will find all of the instructions, and then my coded interpretations in these files here.
+
 # Frontend Mentor - Base Apparel coming soon page
 
 ![Design preview for the Base Apparel coming soon page coding challenge](./design/desktop-preview.jpg)
