@@ -1,32 +1,59 @@
 * {
     font-family: 'Josefin Sans';
 }
-.girl {
-    flex: 50%;
-    padding: 0;
-    margin: 0;
+picture {
+    float: left;
+    width: 50%;
 }
 
 .background {
-    flex: 50%;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    /*z-index: -1;*/
+    float: left;
+    width: 50%;
 }
 
 .images {
     display: flex;
+    flex-flow: row wrap;
+}
+
+.images:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.comingSoon {
+    font-size: 50px;
+    font-weight: 400;
+    position: absolute;
+    bottom: 400px;
+    left: 160px;
+    letter-spacing: 0.3em;
+    text-align: left;
+    display: block;
+}
+
+.were {
+    position: absolute;
+    font-size: 50px;
+    font-weight: 300;
+    bottom: 510px;
+    left: 163px;
+    letter-spacing: 0.3em;
+    color: hsla(0, 36%, 70%, 0.712);
+    text-align: left;
+    display: block;
 }
 
 .mainText {
     position: absolute;
-    bottom: 30%;
-    left: 17%;
+    bottom: 25%;
+    left: 10%;
     text-align: left;
     font-size: 16px;
     color: hsla(0, 36%, 70%, 0.712);
     }
+
 input {
     text-align: left;
     font-size: 16px;
@@ -53,66 +80,52 @@ input {
     outline: none;
 }
 
-.comingSoon {
-    font-size: 50px;
-    position: absolute;
-    bottom: 55%;
-    left: 17%;
-    letter-spacing: 0.3em;
-}
-
-.were {
-    font-size: 50px;
-    position: absolute;
-    bottom: 68%;
-    left: 17.5%;
-    letter-spacing: 0.3em;
-    color: hsla(0, 36%, 70%, 0.712);
-}
-
 .logo {
     position: absolute;
     bottom: 85%;
-    left: 18%;
+    left: 10%;
+    z-index: 1;
 }
 
 #arrow {
     position: absolute;
-    bottom: 31.5%;
+    bottom: 26.5%;
     left: 45%;
 }
 
 .button {
-    position: relative;
+    position: absolute;
     background: linear-gradient(0.25turn, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
     border-radius: 30px;
     border: none;
     height: 50px;
     width: 90px;
     cursor: pointer;
-    bottom: 29.5%;
-    left: 58%;
+    bottom: 0%;
+    left: 80%;
     outline: none;
-    
+    box-shadow: 0px 10px 15px hsl(0, 71%, 89%);    
 }
 
 .button:hover {
     animation-name: background-color;
-    animation-duration: 500ms;
+    animation-duration: 25ms;
     animation-fill-mode: forwards;
+    box-shadow: 0px 15px 20px hsl(0, 22%, 69%);
 }
 
 @keyframes background-color {
     100% {
         background: hsl(0, 66%, 88%); 
+        opacity: 100;
     }
 }
 
 #message {
     position: absolute;
-    color:  hsl(0, 74%, 74%);
-    bottom: 20%;
-    left: 14.5%;
+    display: flex;
+    bottom: -14%;
+    left: 7%;
 }
 
 #error {
@@ -121,3 +134,47 @@ input {
     left: 70%;
 
 }
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    picture {
+        width: 100%;
+        order: 1;
+    }
+    .background {
+        width: 100%;
+        order: 2;
+    }
+}
+/*picture {
+    display: flex;
+    flex: 50%;
+    padding: 0;
+    margin: 0;
+}
+
+.background {
+    flex: 50%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.images {
+    display: flex;
+    flex-direction: row;
+}
+@media screen and (max-width: 375px) {
+    picture {
+        display: flex;
+        flex-direction: column;
+    }
+    .background {
+        display: flex;
+        flex-direction: column;
+    }
+}*/

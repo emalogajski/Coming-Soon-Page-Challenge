@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link href="site.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<div class="images">
-    <div class="background">
-        <img src="bg-pattern-desktop.svg" alt="Background">
-        <div class="were">
-            WE'RE
-        </div>
-        <div class="comingSoon">
-            <b>COMING <br>SOON </b> 
-        </div>
-        <div class="mainText">Hello fellow shoppers! We're currently building our new<br><br>
+    <main>
+        <section class="logo" id="logo">
+            <img src="logo.svg" alt="logo">
+        </section>
+        <section class="images">  
+            <div class="background">
+                <img src="bg-pattern-desktop.svg" alt="Background">
+            </div>
+            <picture>
+                <source media="(orientation: landscape)" srcset="hero-desktop.jpg" sizes="(min-width: 376px)">
+                <source media="(orientation: portrait)" srcset="hero-mobile.jpg 375w" sizes="(max-width: 375px)">
+                <img src="hero-desktop.jpg" alt="Portrait of a Girl">
+            </picture> 
+        </section>
+        <section class="container">
+            <div class="were">
+                WE'RE
+            </div>
+            <div class="comingSoon">
+                <b>COMING <br>SOON </b> 
+            </div>
+        </section>        
+        <section class="mainText">Hello fellow shoppers! We're currently building our new<br><br>
             fashion store. Add your email below to stay up-to-date with <br><br>
             announcements and our launch deals.<br><br><br><br>
-            <input type="text" id="Email" placeholder="Email Address"value="">
+            <input style="color: black" type="text" id="Email" placeholder="Email Address"value="">
             <img src="icon-error.svg" id="error" style="display: none" alt="Error">
-        </div>
-
-        <div class="logo" id="logo">
-            <img src="logo.svg" alt="logo">
-        </div>
-        <button class="button" type="button">
-            <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="20"><path 
-                fill="none" stroke="#FFF" stroke-width="2" d="M1 1l8.836 8.836L1 18.671"/></svg>
-        </button>
-    </div>
-    <div class="girl">
-        <img src="hero-desktop.jpg" alt="Portrait of Girl">
-    </div>
-</div>
-<div id="message"></div>
-
-
+            <button class="button" type="button" onkeypress="myFunction()">
+                <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="20"><path 
+                    fill="none" stroke="#FFF" stroke-width="2" d="M1 1l8.836 8.836L1 18.671"/></svg>
+            </button>
+            <section id="message" type="text"></section>
+        </section>
+    </main>
 </body>
 
 <script>
+
 function validateEmail(email) {
     let valid = tester.test(email);
     if (valid) {
@@ -49,11 +54,11 @@ function validateEmail(email) {
     }
 }
 
+
     let btn = document.querySelector('button');
     let input = document.querySelector('input');
-    let message = document.querySelector('#message');
+    let message = document.getElementById('message');
     let tester = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    let borderEmail = document.getElementById("Email");
 
     btn.addEventListener('click', () => {
         let email = input.value;
@@ -63,13 +68,19 @@ function validateEmail(email) {
 
         if (!isValid) {
             message.innerHTML = "Please provide a valid email";
-            borderEmail.setAttribute('style', 'border: 1px solid red;');
-            error.setAttribute('style', 'display: block');
+            borderEmail.style.border = "1px solid red";
+            error.style.display = "block";
+            message.style.color = "hsl(0, 74%, 74%)";
         } else {
-            message.innerHTML = "";
-            
+            input.value = "";
+            message.innerHTML = "Thank you! We will contact you shortly.";
+            message.style.color = "hsl(143, 40%, 44%)";
+            borderEmail.style.border = "1px solid hsla(0, 36%, 70%, 0.411)";
+            error.style.display = "none";
         }
-    })
+})
+
+
     
 </script>
 
